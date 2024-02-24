@@ -28,7 +28,7 @@ export const animeInserts = [
     },
     {
         name: "Cyberpunk: Edgerunners - \"I Really Want to Stay at Your House\" by ROSA WALTON (LETS EAT GRANDMA)",
-        videoId: "s227cAb5i2w",
+        videoId: "Rbgw_rduQpM",
         videoSource: VIDEOSOURCE.YOUTUBE,
         opts: {
             singer: ["AnimeIns"]
