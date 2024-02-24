@@ -190,7 +190,7 @@ export const animeInserts = [
     },
     {
         name: "Suzumiya Haruhi no Yuuutsu - \"God knows...\" by Aya Hirano",
-        videoId: "txJBiE1r8Gk",
+        videoId: "5QNaSMiZ_-o",
         videoSource: VIDEOSOURCE.YOUTUBE,
         opts: {
             singer: ["AnimeIns"]
@@ -199,7 +199,7 @@ export const animeInserts = [
     },
     {
         name: "Violet Evergarden - \"Letter\" by TRUE",
-        videoId: "5QNaSMiZ_-o",
+        videoId: "wwb7WkZ1Slg",
         videoSource: VIDEOSOURCE.YOUTUBE,
         opts: {
             singer: ["AnimeIns"]
