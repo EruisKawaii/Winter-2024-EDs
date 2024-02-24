@@ -510,10 +510,8 @@ function pick(sortType) {
         timeTaken = timeTaken || new Date().getTime() - timestamp;
 
         progressBar(`Battle No. ${battleNo} - Completed!`, 100);
-        document.querySelector('.left.sort.iframe').style.display = 'none';
-        document.querySelector('.right.sort.iframe').style.display = 'none';
-        document.querySelector('.left.sort.video').style.display = 'none';
-        document.querySelector('.right.sort.video').style.display = 'none';
+        document.querySelector('.sorting.left').style.display = 'none';
+        document.querySelector('.sorting.right').style.display = 'none';
         result();
     } else {
         battleNo++;
