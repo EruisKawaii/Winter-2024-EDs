@@ -68,7 +68,7 @@ function init() {
 
     document.querySelector('.finished.save.button').addEventListener('click', () => saveProgress('Last Result'));
     document.querySelector('.finished.list.button').addEventListener('click', generateTextList);
-    document.querySelector('.finished.list.button.two').addEventListener('click', generateRanksAlphabetically);
+    document.querySelector('.finished.list.button.two').addEventListener('click', generateByMiyeIdOrName);
 
     document.querySelector('.clearsave').addEventListener('click', clearProgress);
 
@@ -510,6 +510,8 @@ function pick(sortType) {
         timeTaken = timeTaken || new Date().getTime() - timestamp;
 
         progressBar(`Battle No. ${battleNo} - Completed!`, 100);
+        document.querySelector('.left.sort.iframe').style.display = 'none';
+        document.querySelector('.right.sort.iframe').style.display = 'none';
         document.querySelector('.left.sort.video').style.display = 'none';
         document.querySelector('.right.sort.video').style.display = 'none';
         result();
@@ -588,7 +590,7 @@ function result(imageNum = 0) {
         const characterIndex = finalSortedIndexes[idx];
         const character = characterDataToSort[characterIndex];
         resultTable.insertAdjacentHTML('beforeend', res(character, rankNum));
-        finalCharacters.push({ rank: rankNum, name: character.name });
+        finalCharacters.push({ rank: rankNum, name: character.name, miyeId: character.miyeId });
 
         if (idx < characterDataToSort.length - 1) {
             if (tiedDataList[characterIndex] === finalSortedIndexes[idx + 1]) {
@@ -691,8 +693,14 @@ function generateImage() {
     });
 }
 
-function generateRanksAlphabetically() {
-    const sortedCharacters = finalCharacters.sort((a, b) => a.name.localeCompare(b.name));
+function generateByMiyeIdOrName() {
+    const sortedCharacters = finalCharacters.sort((a, b) => {
+        if (finalCharacters[0].miyeId !== null) {
+            return a.miyeId - b.miyeId;
+        } else {
+            return a.name.localeCompare(b.name)
+        }
+    });
     const data = sortedCharacters.reduce((str, char) => {
         str += `${char.rank} ${char.name}<br>`;
         return str;

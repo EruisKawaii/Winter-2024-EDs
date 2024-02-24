@@ -1,6 +1,6 @@
 /**
  * @typedef {{name: string, key: string, tooltip?: string, checked?: boolean, sub?: {name: string, tooltip?: string, checked?: string}[]}[]} Options
- * @typedef {{name: string, img?: string, videoId: string, videoSource: VIDEOSOURCE, opts: Object<string, boolean|number[]}[]} CharData
+ * @typedef {{name: string, img?: string, videoId: string, videoSource: VIDEOSOURCE, opts: Object<string, boolean|number[]}[], miyeId: number} CharData
 */
 
 /**
