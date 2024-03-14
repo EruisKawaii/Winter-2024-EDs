@@ -589,7 +589,7 @@ function result(imageNum = 0) {
         const character = characterDataToSort[characterIndex];
         resultTable.insertAdjacentHTML('beforeend', res(character, rankNum));
         finalCharacters.push({ rank: rankNum, name: character.name, miyeId: character.miyeId });
-        console.log(finalCharacters)
+
         if (idx < characterDataToSort.length - 1) {
             if (tiedDataList[characterIndex] === finalSortedIndexes[idx + 1]) {
                 tiedRankNum++;            // Indicates how many people are tied at the same rank.
